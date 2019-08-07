@@ -5,7 +5,8 @@ const puppeteer = require("puppeteer");
 	let page = await browser.newPage();
 	await page.goto("https://www.w3schools.com/");
 
-	const pageTarget = page.target(); // save as pageTarget
+	// save as pageTarget
+	const pageTarget = page.target();
 	const tryItSelector = 'a[href="/html/tryit.asp?filename=tryhtml_default"]';
 	await page.click(tryItSelector);
 
@@ -14,9 +15,11 @@ const puppeteer = require("puppeteer");
 		target => target.opener() === pageTarget
 	);
 
-	const newPage = await newTarget.page(); //get the new page
-	await newPage.waitForSelector("body"); //wait for page to be loaded
+	// get the new page
+	const newPage = await newTarget.page();
 
+	// wait for page to be loaded
+	await newPage.waitForSelector("body");
 	await newPage.screenshot({ path: "tryit.png", fullPage: true });
 
 	// change back
