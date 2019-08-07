@@ -15,13 +15,10 @@ const puppeteer = require("puppeteer");
 	const pages = await browser.pages();
 
 	// change to new page
-	page = pages[pages.length - 1];
-
-	await page.screenshot({ path: "tryit.png", fullPage: true });
+	const newPage = pages[pages.length - 1];
+	await newPage.screenshot({ path: "tryit.png", fullPage: true });
 
 	// change back
-	page = pages[pages.length - 2];
-
 	await page.screenshot({ path: "w3schools.png", fullPage: true });
 	await browser.close();
 })();
