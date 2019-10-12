@@ -1,0 +1,11 @@
+{
+  "name": "puppeteer-advanced-example",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/qiurenbo/puppeteer-advanced-example.git",
+  "author": "qiurenbo <qiurenbo@outlook.com>",
+  "license": "MIT",
+  "dependencies": {
+    "puppeteer": "^1.20.0"
+  }
+}
